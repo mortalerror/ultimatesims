@@ -5,7 +5,6 @@ email: anirbanbhattacherya@gmail.com
 Student Information & Management System
 */
 
-require_once "dal/db.cls.php";
 $db = new db();
 
 //Login Class
@@ -69,25 +68,13 @@ class Login {
 		// Verify the session login.
 		public function sessionVerify() 
 		{	
-			if($_SESSION['userid']!=0){
-			if($_SESSION['userid']!=1 || $_SESSION['userid'] != 2 || $_SESSION['userid'] != 3 ||$_SESSION['userid'] != 9 )
-			{
-				echo "ani";
-				exit();
-				if(validateEmail($this->username) == false)
-				{
-				clearall();
-				return false;
-				}	
-			}
-			
+				
 			session_regenerate_id();
 			$_SESSION['auth'] = $this->auth;
 			$_SESSION['username'] = $this->username;
 			$_SESSION['name'] = $this->name;
 			$_SESSION['userid'] = $this->userid;
-			return true;
-			}
+		
 		}
 		
 		// Checks if the Session data is correct before continuing
@@ -108,18 +95,40 @@ class Login {
 				$this->msg = "Please fill in all fields!";
 			}	
 			else {
-			$sql = "SELECT * FROM users WHERE username = '".$username."' AND password = '".$password."'"; 											
+			$sql = "SELECT * FROM users WHERE username = '".$username."' AND password = '".$password."' and enable_login='Y'"; 											
 			global $db;				
 			$result = $db->getDataRow($sql);	
 		
 				if ($result) {
+					if($result[3] == 4 || $result[3] == 5 || $result[3] == 6){
+					if($this->validateEmail($result[1]) ==  true)
+					{
 					$this->auth = $result[3];
 					$this->username = $result[1];	
 					//$this->name = $result['LNAME']." ".$result['FNAME'];
 					$this->userid = $result[0];
 					
-					return $this->sessionVerify();
-					//return true;
+					$this->sessionVerify();
+					return true;
+					}
+					else
+					{
+						$ip = $this->getUserIP();			
+						//ExecuteQuery("INSERT INTO hack_attempt(username, IP) VALUES('$ip')");
+						//throw new Exception(Login::ERROR_VALIDATE_LOGIN);
+						$this->msg = "Unauthorized Access";	
+					}
+					}
+					else
+					{
+							$this->auth = $result[3];
+							$this->username = $result[1];	
+							//$this->name = $result['LNAME']." ".$result['FNAME'];
+							$this->userid = $result[0];
+							
+							$this->sessionVerify();
+							return true;	
+					}
 				}
 				else {
 					$ip = $this->getUserIP();			
