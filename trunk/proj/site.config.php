@@ -8,6 +8,7 @@ if(SITE_PHP==0)
 	
 	$IgnoreFiles = Array('.DS_Store','CVS','.svn');
 	
+	
 	if($handle = opendir("$staticpath/functions"))
 	{
 		if(!is_array($IgnoreFiles))
@@ -20,6 +21,10 @@ if(SITE_PHP==0)
 				require_once("$staticpath/functions/$file");
 		}
 	}
+	
+	//ini_set( 'include_path', ':' .$staticpath . "/bl".':' . $staticpath."/functions". ":" . $staticpath."/include". ":" . ('include_path'));
+	//ini_set( 'include_path', $staticpath . "/bl/");
+	//echo  ini_get('include_path');
 	
 }
 ?>
