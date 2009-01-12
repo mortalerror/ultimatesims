@@ -11,8 +11,6 @@ if(CONFIG_INC==0)
 		if(!isset($SessionStart))
 			$SessionStart = 1;
 			
-		//Declare the static path
-		$staticpath = dirname(__FILE__);
-				
+						
 	}
 ?>
