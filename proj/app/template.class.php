@@ -5,21 +5,20 @@
  * @email anirbanbhattacherya@gmail.com
  * @Project Student Information & Management System
  * @copyright 2009
+ * @file base.class.php
  */
-
 
 Class Template {
 
 private $registry;
-
 private $vars = array();
 
-//Construct
+
+//Magic Method
 function __construct($registry) {
 	$this->registry = $registry;
 
 }
-
 
 //Magic Method
  public function __set($index, $value)
@@ -28,8 +27,8 @@ function __construct($registry) {
  }
 
 
-function show($mod, $name) {
-	$path = __SITE_PATH . '/views' . '/modules/' . $mod ."/". $name . '.php';
+function show($name, $module='default') {
+	$path = __SITE_PATH . '/views' . '/' . $module ."/". $name . '.php';
 
 	if (file_exists($path) == false)
 	{

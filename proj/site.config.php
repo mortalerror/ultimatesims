@@ -7,10 +7,10 @@ Student Information & Management System
 */
 
 
-if(SITE_PHP==0)
+if('SITE_PHP'==0)
 {
 	//error_reporting(0);
-	define("SITE_PHP",1);
+	define('SITE_PHP',1);
 	require_once("include/config.inc.php");
 	require_once("dal/db.cls.php");
 	
@@ -21,6 +21,12 @@ if(SITE_PHP==0)
 	
 	//Includes Models
 	add_include_path( $staticpath . "/bl");
+	add_include_path( $staticpath . "/app");
+	
+	include "base.class.php";
+	include "registry.class.php";
+	include "route.class.php";
+	include "template.class.php";
 	
 	
 	//Adding Functions
@@ -39,6 +45,7 @@ if(SITE_PHP==0)
 		}
 	}
 	
+	$registry = new registry;
 }
 
 
