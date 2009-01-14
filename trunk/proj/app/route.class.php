@@ -47,6 +47,7 @@ class router {
 	/*** check the route ***/
 	$this->getController();
 
+	
 	/*** if the file is not there diaf ***/
 	if (is_readable($this->file) == false)
 	{
@@ -87,7 +88,8 @@ private function getController() {
 
 	/*** get the route from the url ***/
 	$route = (empty($_GET['rt'])) ? '' : $_GET['rt'];
-
+	
+	
 	if (empty($route))
 	{
 		$route = 'index';
@@ -105,17 +107,19 @@ private function getController() {
 
 	if (empty($this->controller))
 	{
+		$this->module = 'default';
 		$this->controller = 'index';
 	}
 
 	/*** Get action ***/
 	if (empty($this->action))
 	{
+		$this->module = 'default';
 		$this->action = 'index';
 	}
 
 	/*** set the file path ***/
-	$this->file = $this->path .'/'. $this->controller . '.php';
+	$this->file = $this->path .'/'. $this->module ."/" . $this->controller . '.php';
 }
 
 

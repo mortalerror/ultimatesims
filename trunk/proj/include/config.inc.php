@@ -1,5 +1,5 @@
 <?php
-if(CONFIG_INC==0)
+if('CONFIG_INC'==0)
 	{
 		//Defining the application start
 		define('CONFIG_INC',1);
