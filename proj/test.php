@@ -1,7 +1,4 @@
 <?php
-include "site.config.php";
-
-require_once("login.cls.php");
 
 $login = new login();
 $row = $login->checkLogin("anirban@yahoo.com", "anirban");

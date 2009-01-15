@@ -8,12 +8,19 @@
  * @file base.class.php
  */
 
- /*** error reporting on ***/
+
+
+//Check login
+	session_start();
+	if(!$_SESSION['username'])
+	header("Location:login.php");
+
+ //error reporting
  error_reporting(E_ALL);
 
- //Load the Config
+ //Load the Config 
  include 'site.config.php';
-
+ 
 //Load the header
  include "header.php";
  
@@ -30,7 +37,12 @@
  $registry->router->loader();
 
 
+
+
+
+
+
  //Load the footer
- 
+include "footer.php";
 
 ?>
