@@ -18,6 +18,9 @@ if('SITE_PHP'==0)
 	//Declare the static path
 	$staticpath = dirname(__FILE__);
 	
+	//Define Site path
+	$site_path = realpath(dirname(__FILE__));
+ 	define ('__SITE_PATH', $site_path);
 	
 	//Includes Models
 	add_include_path( $staticpath . "/bl");
