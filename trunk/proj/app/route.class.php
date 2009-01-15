@@ -19,9 +19,14 @@ class router {
 
  public $file;
 
+//Controller Declaration
  public $controller;
 
+//Action Declaration
  public $action; 
+
+//Module Declaration
+ public $module; 
 
 //Magic Method
  function __construct($registry) {
@@ -51,15 +56,12 @@ class router {
 	/*** if the file is not there diaf ***/
 	if (is_readable($this->file) == false)
 	{
-		// echo $this->file;
-		// die ('404 Not Found');
-		global $staticpath;
 		/*
 		$this->file = $this->path.'/error404.php';
                 $this->controller = 'error404';
         */
-        $this->file = $staticpath.'/error404.php';
-                $this->controller = 'error404';
+        		$this->file = __SITE_PATH.'/error.php';
+                $this->controller = 'error';
 	}
 
 	/*** include the controller ***/
@@ -78,6 +80,7 @@ class router {
 	{
 		$action = $this->action;
 	}
+	
 	/*** run the action ***/
 	$controller->$action();
  }
@@ -87,9 +90,16 @@ class router {
 private function getController() {
 
 	/*** get the route from the url ***/
-	$route = (empty($_GET['rt'])) ? '' : $_GET['rt'];
+	$route = (empty($_GET['mod'])) ? '' : $_GET['mod'];
+	$action = (empty($_GET['act'])) ? '' : $_GET['act'];
 	
 	
+	if(!$action)
+	$this->action = 'index';
+	else
+	$this->action = $action;
+	
+		
 	if (empty($route))
 	{
 		$route = 'index';
@@ -98,26 +108,33 @@ private function getController() {
 	{
 		/*** get the parts of the route ***/
 		$parts = explode('/', $route);
-		$this->controller = $parts[0];
+		$this->module = $parts[0];
+		$this->controller = $parts[1];
+		/*
 		if(isset( $parts[1]))
 		{
 			$this->action = $parts[1];
 		}
+		*/
 	}
+
+	if(empty($this->module))
+	$this->module = 'default';
+
 
 	if (empty($this->controller))
 	{
-		$this->module = 'default';
 		$this->controller = 'index';
 	}
 
+
 	/*** Get action ***/
-	if (empty($this->action))
+/*	if (empty($this->action))
 	{
 		$this->module = 'default';
 		$this->action = 'index';
 	}
-
+*/
 	/*** set the file path ***/
 	$this->file = $this->path .'/'. $this->module ."/" . $this->controller . '.php';
 }
