@@ -226,7 +226,8 @@ Returns: Error Message
            $errstr = substr ($errstr, $posmessage, strlen($errstr)-$posmessage);  
            
            $slimerror = "<pre style=\"color : black\"><b>error on line <span style=\"color:blue;\">{$error["line"]}</span> in <span style=\"color:blue;\">{$error["file"]}</span> <b> function {$error["function"]} $errstr </b>";
-           echo $slimerror;   
+           //Diabling error message
+		   //echo $slimerror;   
          }
        } 
      }
