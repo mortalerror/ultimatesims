@@ -105,7 +105,7 @@ class Login {
 					{
 					$this->auth = $result[3];
 					$this->username = $result[1];	
-					//$this->name = $result['LNAME']." ".$result['FNAME'];
+					$this->name = $result['LNAME']." ".$result['FNAME'];
 					$this->userid = $result[0];
 					
 					$this->sessionVerify();

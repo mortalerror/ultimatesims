@@ -23,7 +23,7 @@
  
 //Load the header
  include "header.php";
- 
+ include "body.inc.php";
  //load the router
  $registry->router = new router($registry);
 
@@ -32,6 +32,9 @@
 
  //load up the template
  $registry->template = new template($registry);
+
+
+
 
  //load the controller
  $registry->router->loader();

@@ -24,7 +24,17 @@ if('__HEADER'==0)
 	}
 	
 	echo "</head>";
-	
+	echo '<link rel="stylesheet" type="text/css" href="styles/styles.css">';
 	echo "<body>";
+	
+	echo '<div class="wrapper">
+  <div class="topbar">
+    <div class="logo">
+      <div class="desc">Student Information and Management System</div>
+    </div>
+    <div class="welcome">Welcome '.$_SESSION['username']. '| <a href="#">Logout</a><br />
+      Your Last Login was 3rd September, 2008</div>
+    <div class="clear"></div>
+  </div>';
 }
 ?>
