@@ -11,20 +11,26 @@
  /*** error reporting on ***/
  error_reporting(E_ALL);
 
-
- /*** include the init.php file ***/
+ //Load the Config
  include 'site.config.php';
 
- /*** load the router ***/
+//Load the header
+ include "header.php";
+ 
+ //load the router
  $registry->router = new router($registry);
 
- /*** set the controller path ***/
+ //set the controller path
  $registry->router->setPath (__SITE_PATH . '/controller');
 
- /*** load up the template ***/
+ //load up the template
  $registry->template = new template($registry);
 
- /*** load the controller ***/
+ //load the controller
  $registry->router->loader();
+
+
+ //Load the footer
+ 
 
 ?>

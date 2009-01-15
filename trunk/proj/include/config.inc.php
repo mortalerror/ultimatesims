@@ -11,6 +11,7 @@ if('CONFIG_INC'==0)
 		if(!isset($SessionStart))
 			$SessionStart = 1;
 			
+		define('__TITLE', "Student Information & Management System");
 						
 	}
 ?>

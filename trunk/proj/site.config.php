@@ -25,6 +25,7 @@ if('SITE_PHP'==0)
 	//Includes Models
 	add_include_path( $staticpath . "/bl");
 	add_include_path( $staticpath . "/app");
+	add_include_path( $staticpath);
 	
 	include "base.class.php";
 	include "registry.class.php";
