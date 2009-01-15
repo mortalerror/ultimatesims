@@ -1,0 +1,34 @@
+html, body { background-color:#75dbff; margin:0px; padding:0px; text-align:center; height:100% ; overflow-x:hidden; overflow:auto;}
+td,p,div,span { font-family:Arial, Helvetica, sans-serif; font-size:11px; }
+
+/* inside */
+.wrapper { width:100%; background-color:#fff; height:93%; display:block; top:0; left:0; border:0px none; margin:0px; padding:0px; }
+.topbar { height:104px; overflow:visible; background-image:url(../images/topbar.png); background-repeat:repeat-x; background-color:#000; text-align:left; }
+.footer { background-image:url(../images/login_footer.png); height:33px; background-repeat:repeat-x; clear:both;}
+.footer_txt { padding-top:10px; color:#c2c2c2; font-size:10px;}
+.content { background-color:#fff; height:88%; padding:4px;}
+.menubar { background-color:#f3f3f3; width:19%; height:100%; float:left; overflow:auto; text-align:left;}
+.separator {float:left; width:0.36%; height:100%;  background-color:#fff;}
+.clear { height:6px; clear:both;}
+.board { float:left; background-color:#f3f3f3; height:100%; width:60.44%; text-align:left;}
+.relative {float:left; background-color:#f3f3f3; height:100%; width:20%; text-align:left;}
+.masthead {float:left}
+.welcome { float:right; font-size:12px; font-weight:bold; color:#fff; padding:12px 12px 6px 6px;;}
+.welcome a {color:#fff; text-decoration:none;}
+.logo { background-image:url(../images/sims_logo.png); background-repeat:no-repeat; background-position:16px 30px; height:78px; width:293px; float:left;}
+.desc { font-size:13px; padding:60px 0px 0px 16px; color:#838383; }
+/* inside */
+
+
+/* menu */
+.menu_links a { display:block; padding:5px 0px 5px 8px; border-bottom:1px solid #d9d9d9; color:#333333; text-decoration:none; font-size:12px;}
+.menu_links a:hover { color:#FF0000;}
+.menu_links a.active { color:#990000; font-weight:bold;}
+/*menu */
+
+/* content */
+.heading { background-color:#d9d9d9;  padding:5px 0px 5px 6px; height:16px; }
+.heading_txt {  float:left; font-size:13px; font-weight:bold; color:#596268;}
+.date { float:right; font-size:13px; font-weight:bold; color:#596268; padding-right:6px;}
+.content { padding:15px;}
+/* content */

@@ -190,6 +190,7 @@ Returns: Error Message
 **************************************************************************************************************************/
      function CDE_Errors($errno, $errstr, $errfile, $errline)
      {
+
        $backtrace = debug_backtrace();
        
        //Only report on serious errors
@@ -202,7 +203,7 @@ Returns: Error Message
          
         // echo $this->pre_r($error);
          
-         if ($devdebug)
+         if ($this->devdebug)
          {
            $clickhere = "<a href=\"#\" onclick=\"if (document.getElementById('error$this->errorno').style.display == 'block') {document.getElementById('error$this->errorno').style.display = 'none'; } else { document.getElementById('error$this->errorno').style.display = 'block'; } ;\"> [toggle debug] </a><div style=\"display:none;\" id=\"error$this->errorno\"><pre>".print_r($backtrace, 1)."</pre></div>";
          }
@@ -227,7 +228,7 @@ Returns: Error Message
            
            $slimerror = "<pre style=\"color : black\"><b>error on line <span style=\"color:blue;\">{$error["line"]}</span> in <span style=\"color:blue;\">{$error["file"]}</span> <b> function {$error["function"]} $errstr </b>";
            //Diabling error message
-		   //echo $slimerror;   
+		   echo $slimerror;   
          }
        } 
      }

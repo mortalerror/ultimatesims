@@ -19,21 +19,42 @@ if($_POST['loginsubmit'])
 
 ?>
 
-<html><head></head><body>
+<html><head>
+<title>Please Login - Student Information and Management system</title>
+<link rel="stylesheet" type="text/css" href="styles/login.css" />
+</head><body>
 <form id='login' name='login' action="<?php echo $PHP_SELF ?>" method="POST">
-<table border="1" width="28%" id="table1">
-	<tr>
-		<td width="40%">Username</td>
-		<td width="55%"><input type="text" name="txtusername" size="20" value="<?php echo $_REQUEST['txtusername']; ?>"/></td>
-	</tr>
-	<tr>
-		<td width="40%">Password</td>
-		<td width="55%"><input type="password" name="txtpassword" size="20" /></td>
-	</tr>
-	<tr>
-		<td colspan="2"><label><?php echo $loginerr; ?></label>
-		<p align="right"><input type="submit" value="Submit" name="loginsubmit" /></td>
-	</tr>
-</table>
+
+<div class="login_wrapper">
+  <div class="topbar">
+    <div class="logo"></div>
+    <div class="desc">Student Information and Management System</div>
+  </div>
+  <div class="content">
+    <div class="label">Username</div>
+    <div class="field_separator">:</div>
+    <div class="field">
+      <input name="txtusername" type="text" />
+    </div>
+    <div class="clear"></div>
+    <div class="label">Password</div>
+    <div class="field_separator">:</div>
+    <div class="field">
+      <input name="txtpassword" type="password" />
+    </div>
+    <div class="clear"></div>
+    <div class="label">&nbsp;</div>
+    <div class="field_separator">&nbsp;</div>
+    <div class="field">
+      <input name="loginsubmit" type="submit" class="btn_medium" value="Login" />
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="footer">
+    <div class="footer_txt">Copyright &copy; 2009 Student Information and Management System. All Rights Reserved.</div>
+  </div>
+</div>
+
+
 </form>
 </body></html>

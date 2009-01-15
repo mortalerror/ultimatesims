@@ -1,0 +1,17 @@
+html, body { margin:0px; padding:0px; text-align:left;}
+td,p,div,span,body { font-family:Arial, Helvetica, sans-serif; font-size:11px; }
+
+/* menu */
+.menu_links a { display:block; padding:5px 0px 5px 8px; border-bottom:1px solid #d9d9d9; color:#333333; text-decoration:none; font-size:12px;}
+.menu_links a:hover { color:#FF0000;}
+.menu_links a.active { color:#990000; font-weight:bold;}
+/*menu */
+
+/* content */
+.heading { background-color:#b2c5d0;  padding:5px 0px 5px 6px; height:16px; }
+.heading_txt {  float:left; font-size:13px; font-weight:bold; color:#596268;}
+.date { float:right; font-size:13px; font-weight:bold; color:#596268; padding-right:6px;}
+.content { padding:15px;}
+/* content */
+
+
