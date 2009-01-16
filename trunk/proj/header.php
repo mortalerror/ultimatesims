@@ -7,20 +7,20 @@ if('__HEADER'==0)
 	echo "<title>".__TITLE."</title>";
 	
 	//Adding javascripts
-	$handle=opendir("js");
-	while ($file = readdir($handle)) {
-	$filelst = "$filelst,$file";
-	}
-	closedir($handle);
-	$filelist = explode(",",$filelst);
+//Adding Functions
+	$IgnoreFiles = Array('.DS_Store','CVS','.svn');
 	
-	if(count($filelist)>3)
+	if($handle = opendir($staticpath."/js"))
 	{
-	for ($count=1;$count<count($filelist);$count++) {
-	$filename=$filelist[$count];
-	if(($filename != ".") && ($filename != "..") && ($filename!=""))
-	echo "<script src='js/".$filename."'></script>";
-	}
+		if(!is_array($IgnoreFiles))
+			$IgnoreFiles=Array();
+
+		while (false !== ($file = readdir($handle)))
+		{
+			// if filename isn't '.' '..' or in the Ignore list... load it.
+			if($file != "." && $file != ".." && !in_array($file,$IgnoreFiles))
+				echo "<script src='js/$file'></script>";
+		}
 	}
 	
 	echo "</head>";
