@@ -9,4 +9,5 @@ echo '
 <a href="#" >Menu link 6</a>
 </div>
 ';
+//echo getuser($_SESSION['auth'], $_SESSION['userid']);
 ?>

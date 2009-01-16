@@ -24,6 +24,7 @@
 //Load the header
  include "header.php";
  include "body.inc.php";
+ 
  //load the router
  $registry->router = new router($registry);
 

@@ -74,6 +74,7 @@ class Login {
 			$_SESSION['username'] = $this->username;
 			$_SESSION['name'] = $this->name;
 			$_SESSION['userid'] = $this->userid;
+			
 		
 		}
 		
