@@ -14,4 +14,10 @@ echo "<br>".$date->time;
 date_default_timezone_set('UTC');
 echo "<br><br>".date("G:i");
 echo "<br>".$_SERVER['REQUEST_TIME'] ;
+
+echo "<br><br>".setdate("17", "01", "1999");
+
+echo "<br>Current Date: ".getcurrentdate();
+
+echo "<br>Current Time:".getcurrentdatetime();
 ?>
