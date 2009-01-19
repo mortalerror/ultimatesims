@@ -14,6 +14,7 @@ if('SITE_PHP'==0)
 	require_once("include/config.inc.php");
 	require_once("dal/db.cls.php");
 	
+	$db = new db();
 	
 	//Declare the static path
 	$staticpath = dirname(__FILE__);

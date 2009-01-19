@@ -13,8 +13,9 @@ if($_POST['loginsubmit'])
 		if($row==false)
 		$loginerr = $login->msg;
 		else
-		header("Location:index.php");
-	
+		{
+			header("Location:index.php");
+		}
 }
 
 ?>
