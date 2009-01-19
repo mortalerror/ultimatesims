@@ -1,4 +1,5 @@
 <?php
+
 echo '
 <div class="menu_links">
 <a href="#" >Menu link 1</a>
@@ -9,5 +10,5 @@ echo '
 <a href="#" >Menu link 6</a>
 </div>
 ';
-//echo getuser($_SESSION['auth'], $_SESSION['userid']);
+
 ?>

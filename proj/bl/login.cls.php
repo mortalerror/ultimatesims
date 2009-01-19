@@ -1,8 +1,8 @@
 <?php
-/*
-Created by Anirban Bhattacherya
-email: anirbanbhattacherya@gmail.com 
-Student Information & Management System
+/**
+* @author:  Anirban Bhattacherya
+* @email: anirbanbhattacherya@gmail.com 
+* Student Information & Management System
 */
 
 $db = new db();
@@ -75,8 +75,20 @@ class Login {
 			$_SESSION['name'] = $this->name;
 			$_SESSION['userid'] = $this->userid;
 			
-		
+			//$this->setuserdetails();
 		}
+		
+		//Set the User Details
+		function setuserdetails()
+			{
+				
+				$types = array(1=>'student', 2=>'parent', 3=>'student_contacts', 4=>'teacher', 5=>'staff', 6=>'admin', 7=>'admin', 8=>'admin', 9=>'admin');
+				$sql = "select * from ".$this->auth." where userid='".$this->userid."'";
+				global $db;
+				$ret = $db->getDataRow($sql);
+				$_SESSION['user_details'] = $ret;
+					
+			}
 		
 		// Checks if the Session data is correct before continuing
 		public function verifyAccess() {
