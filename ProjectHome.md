@@ -1,0 +1,2 @@
+This is a complete Student Information & Management System. Primarily I started working with SIS for openSIS taking the base from Center/SIS of Jack Miller. But problem is, all these are very much postgresql dependent and having very old architecture and coding pattern. So thought to start a new framwework which will be cross-platform with cross database compatibility, built in API that is useable from Parent Portals and Moodle compatiable application. Also these companies sells their modules Billing and Dicipline modules which I though to include in the package.
+
